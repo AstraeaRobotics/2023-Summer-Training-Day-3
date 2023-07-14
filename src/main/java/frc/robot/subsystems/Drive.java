@@ -20,8 +20,10 @@ public class Drive extends SubsystemBase {
 
 
   public void drive(double speed){
-    
+    leftMotor.set(speed);
+    rightMotor.set(speed);
   }
+  
   public Drive() {}
 
   @Override
