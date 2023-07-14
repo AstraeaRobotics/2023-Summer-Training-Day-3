@@ -14,7 +14,7 @@ public class DriveToDistance extends CommandBase {
 
   public DriveToDistance(Drivetrain m_drivebase) {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(m_drivebase);
+    addRequirements(m_drivetrain);
   }
 
   // Called when the command is initially scheduled.
