@@ -7,14 +7,15 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.*;
 
-public class DriveCommand extends CommandBase {
-
+public class DriveToDistance extends CommandBase {
+  /** Creates a new DriveToDistance. */
   Drive m_drive;
-  /** Creates a new Drivecommand. */
-  public DriveCommand(Drive driveSubsystem) {
+  double startingPosition;
+  double distance;
+  public DriveToDistance(Drive drive) {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_drive = driveSubsystem;
-    addRequirements(driveSubsystem);
+    this.m_drive = drive;
+    addRequirements(m_drive);
   }
 
   // Called when the command is initially scheduled.
@@ -25,7 +26,6 @@ public class DriveCommand extends CommandBase {
   @Override
   public void execute() {
     m_drive.drive(0.2);
-
   }
 
   // Called once the command ends or is interrupted.
@@ -37,6 +37,6 @@ public class DriveCommand extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return m_drive.getDistance() - startingPosition > distance - 0.05;
   }
 }
