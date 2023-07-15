@@ -5,7 +5,7 @@ This should be relatively similar to what you did yesterday. Know that the drive
 The goal for this assignment should be to program a working drivebase using whatever control format on the controller you'd like. 
 **Hint setting a default command for your drivebase subsystem may make things much easier. Ask your veterans or look through 2023-Charged-Up code to get an idea on how to use a default command**
 
-In addition, you must make a DriveToDistance command and bind it to a button so that, upon the button being pressed, the bot will drive 3 meters before stopping. You may search up conversion factors to get from Neo encoder ticks to meters and ask Andy for the diameter of the wheels on the bot.
+In addition, you must make a DriveToDistance command and bind it to a button so that, upon the button being pressed, the bot will drive 3 meters before stopping. You may search up conversion factors to get from Neo encoder revolutions to meters and ask Andy for the diameter of the wheels on the bot.
 
 (quick tip, know that since the drivebase has motors pointing in different directions you may have to invert one of the sides in order for the wheels to spin in the same direction)
 
