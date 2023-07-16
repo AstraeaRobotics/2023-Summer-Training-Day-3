@@ -11,16 +11,16 @@ import com.revrobotics.CANSparkMaxLowLevel;
 public class DriveBaseSubsystem extends SubsystemBase {
   /** Creates a new DriveBaseSubsystem. */
 
-  CANSparkMax frontLeft;
-  CANSparkMax frontRight;
-  CANSparkMax backLeft;
-  CANSparkMax backRight;
+  CANSparkMax motor1;
+  CANSparkMax motor2;
+  CANSparkMax motor3;
+  CANSparkMax motor4;
 
   public DriveBaseSubsystem() {
-    frontLeft = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-    frontRight = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-    backLeft = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
-    backRight = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless); 
+    motor1 = new CANSparkMax(0, CANSparkMaxLowLevel.MotorType.kBrushless);
+    motor2 = new CANSparkMax(1, CANSparkMaxLowLevel.MotorType.kBrushless);
+    motor3 = new CANSparkMax(2, CANSparkMaxLowLevel.MotorType.kBrushless);
+    motor4 = new CANSparkMax(3, CANSparkMaxLowLevel.MotorType.kBrushless); 
   }
 
   @Override
