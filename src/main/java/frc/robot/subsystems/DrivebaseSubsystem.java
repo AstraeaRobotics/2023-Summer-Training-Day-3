@@ -30,6 +30,10 @@ public class DrivebaseSubsystem extends SubsystemBase {
     frontRight = new CANSparkMax(3, CANSparkMaxLowLevel.MotorType.kBrushless);
     backRight = new CANSparkMax(4, CANSparkMaxLowLevel.MotorType.kBrushless);
 
+    frontLeft.getEncoder().setInverted(true);
+    backLeft.getEncoder().setInverted(true);
+
+
     TICKS_PER_REVOLUTION = frontLeft.getEncoder().getCountsPerRevolution();
     WHEEL_DIAMETER_INCHES = 6;
     WHEEL_CIRCUMFERENCE_INCHES = WHEEL_DIAMETER_INCHES*Math.PI;
@@ -59,13 +63,6 @@ public class DrivebaseSubsystem extends SubsystemBase {
     backLeft.getEncoder().setPosition(0);
     backRight.getEncoder().setPosition(0);
   }
-
-  public void DriveToDistance(double Distance_In_Centimeters) {
-    frontLeft.getEncoder().setPosition(Distance_In_Centimeters * TICKS_PER_CENTIMETER);
-    frontLeft.getEncoder().setPosition(Distance_In_Centimeters * TICKS_PER_CENTIMETER);
-    frontLeft.getEncoder().setPosition(Distance_In_Centimeters * TICKS_PER_CENTIMETER);
-    frontLeft.getEncoder().setPosition(Distance_In_Centimeters * TICKS_PER_CENTIMETER);
-  }
   
   public double getFLEncoder() {
     return frontLeft.getEncoder().getPosition();
@@ -83,6 +80,14 @@ public class DrivebaseSubsystem extends SubsystemBase {
   
   public double getAvgEncoderValue() {
     return (getFLEncoder() + getFREncoder() + getBLEncoder() + getBREncoder())/4;
+  }
+
+  public double getDistanceCentimeters() {
+    return (getAvgEncoderValue() * TICKS_PER_CENTIMETER);
+  }
+
+  public double getDistanceInches() {
+    return (getAvgEncoderValue() * TICKS_PER_INCH);
   }
 
   @Override

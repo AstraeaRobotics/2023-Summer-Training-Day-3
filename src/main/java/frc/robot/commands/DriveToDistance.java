@@ -26,7 +26,7 @@ public class DriveToDistance extends CommandBase {
   @Override
   public void execute() {
     drivebaseSubsystem.EncoderReset();
-    drivebaseSubsystem.DriveToDistance(300);
+    drivebaseSubsystem.DRIVE(0.2, 0.2, 0.2, 0.2);
   }
 
   // Called once the command ends or is interrupted.
@@ -36,6 +36,7 @@ public class DriveToDistance extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    double distance = drivebaseSubsystem.getDistanceCentimeters();
+    return (distance > 295 && distance < 305);
   }
 }
