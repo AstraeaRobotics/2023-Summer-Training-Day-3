@@ -10,3 +10,14 @@ In addition, you must make a DriveToDistance command and bind it to a button so 
 (quick tip, know that since the drivebase has motors pointing in different directions you may have to invert one of the sides in order for the wheels to spin in the same direction)
 
 Feel free to dm me, Som, or any veterans your questions.
+
+TODO: 
+- Build a drivebase
+    - two motors on each side (done)
+        - left ids: 1, 2 (done)
+        - right ids: 3, 4 (done)
+    - set default command? (ask)
+- DriveToDistance (um)
+    - bind to button (sure)
+    - drive 3 meters and then stop (lol)
+        - search conversions from Neo revolutions to meters.. diameter of wheels ?! (uh ok)
